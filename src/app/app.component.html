@@ -3,19 +3,17 @@
   <a href="/" class="home-btn">
     <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home">
   </a>
-  <button class="menu-btn" onclick="toggleMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
-  </button>
-  <div class="menu" id="menu">
-    <a href="https://fundamentos-ejemmplo1.netlify.app/">Ejemplo 1</a>
-    <a href="https://ejemplo2dados.netlify.app/">Ejemplo 2</a>
-    <a href="https://ejemplo3productos.netlify.app/">Ejemplo 3</a>
-    <a href="https://ejemplo4formularioreact.netlify.app/">Ejemplo 4</a>
-    <a href="https://ejemplo5formularioreactivo.netlify.app/">Ejemplo 5</a>
-    <a href="https://hotelutx-parcial1.netlify.app/">Proyecto</a>
-  </div>
+  
+  <!-- Menú desplegable con select -->
+  <select class="menu-select" onchange="location = this.value;">
+    <option value="" selected disabled>Menú</option>
+    <option value="https://fundamentos-ejemmplo1.netlify.app/">Ejemplo 1</option>
+    <option value="https://ejemplo2dados.netlify.app/">Ejemplo 2</option>
+    <option value="https://ejemplo3productos.netlify.app/">Ejemplo 3</option>
+    <option value="https://ejemplo4formularioreact.netlify.app/">Ejemplo 4</option>
+    <option value="https://ejemplo5formularioreactivo.netlify.app/">Ejemplo 5</option>
+    <option value="https://hotelutx-parcial1.netlify.app/">Proyecto</option>
+  </select>
 </div>
 
 <!-- Juego de dados -->
@@ -56,54 +54,11 @@
     cursor: pointer;
   }
 
-  .menu-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .menu-btn div {
-    width: 30px;
-    height: 3px;
-    background-color: black;
-    transition: 0.3s;
-  }
-
-  .menu {
-    display: none;
-    position: absolute;
-    top: 40px;
-    right: 0;
-    background: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    overflow: hidden;
-  }
-
-  .menu a {
-    display: block;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: black;
+  .menu-select {
+    padding: 5px;
     font-size: 16px;
-    transition: background 0.3s;
-  }
-
-  .menu a:hover {
-    background: #f1f1f1;
-  }
-
-  .show-menu {
-    display: block;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
   }
 </style>
-
-<!-- Script para el menú desplegable -->
-<script>
-  function toggleMenu() {
-    document.getElementById("menu").classList.toggle("show-menu");
-  }
-</script>
