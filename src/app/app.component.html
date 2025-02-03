@@ -1,25 +1,25 @@
-<!-- Menú de navegación superior derecho -->
+<!-- Contenedor del menú superior derecho -->
 <div class="nav-container">
-    <a href="index.html" class="home-btn">
-        <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home">
-    </a>
-    <button class="menu-btn" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-    </button>
-    <div class="menu" id="menu">
-        <a href="https://fundamentos-ejemmplo1.netlify.app/">Ejemplo 1</a>
-        <a href="https://ejemplo2dados.netlify.app/">Ejemplo 2</a>
-        <a href="https://ejemplo3productos.netlify.app/">Ejemplo 3</a>
-        <a href="https://ejemplo4formularioreact.netlify.app/">Ejemplo 4</a>
-        <a href="https://ejemplo5formularioreactivo.netlify.app/">Ejemplo 5</a>
-        <a href="https://hotelutx-parcial1.netlify.app/">Proyecto</a>
-    </div>
+  <a href="/" class="home-btn">
+    <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home">
+  </a>
+  <button class="menu-btn" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </button>
+  <div class="menu" id="menu">
+    <a href="https://fundamentos-ejemmplo1.netlify.app/">Ejemplo 1</a>
+    <a href="https://ejemplo2dados.netlify.app/">Ejemplo 2</a>
+    <a href="https://ejemplo3productos.netlify.app/">Ejemplo 3</a>
+    <a href="https://ejemplo4formularioreact.netlify.app/">Ejemplo 4</a>
+    <a href="https://ejemplo5formularioreactivo.netlify.app/">Ejemplo 5</a>
+    <a href="https://hotelutx-parcial1.netlify.app/">Proyecto</a>
+  </div>
 </div>
 
-<!-- Contenido del juego de dados -->
-<div style="text-align: center; margin-top: 60px;">
+<!-- Juego de dados -->
+<div style="text-align: center;">
   <h1>Juego de dados</h1>
   <app-dado valor="{{ valor1 }}"></app-dado>
   <app-dado valor="{{ valor2 }}"></app-dado>
@@ -33,83 +33,77 @@
 
   <hr />
 
-  <p>{{resultado}}</p>
+  <p>{{ resultado }}</p>
 </div>
 
 <router-outlet></router-outlet>
 
 <!-- Estilos -->
 <style>
-    .nav-container {
-        position: fixed;
-        top: 10px;
-        right: 20px;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        z-index: 1000;
-    }
+  .nav-container {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 1000;
+  }
 
-    .home-btn {
-        background: none;
-        border: none;
-        cursor: pointer;
-    }
+  .home-btn img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
 
-    .home-btn img {
-        width: 30px;
-        height: 30px;
-        filter: invert(1);
-    }
+  .menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
 
-    .menu-btn {
-        background: none;
-        border: none;
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-    }
+  .menu-btn div {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    transition: 0.3s;
+  }
 
-    .menu-btn div {
-        width: 30px;
-        height: 3px;
-        background-color: black;
-        transition: 0.3s;
-    }
+  .menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+  }
 
-    .menu {
-        display: none;
-        position: absolute;
-        top: 40px;
-        right: 0;
-        background: #fff;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-        overflow: hidden;
-    }
+  .menu a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    transition: background 0.3s;
+  }
 
-    .menu a {
-        display: block;
-        padding: 10px 20px;
-        text-decoration: none;
-        color: black;
-        font-size: 16px;
-        transition: background 0.3s;
-    }
+  .menu a:hover {
+    background: #f1f1f1;
+  }
 
-    .menu a:hover {
-        background: #f1f1f1;
-    }
-
-    .show-menu {
-        display: block;
-    }
+  .show-menu {
+    display: block;
+  }
 </style>
 
-<!-- Script -->
+<!-- Script para el menú desplegable -->
 <script>
-    function toggleMenu() {
-        document.getElementById("menu").classList.toggle("show-menu");
-    }
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show-menu");
+  }
 </script>
